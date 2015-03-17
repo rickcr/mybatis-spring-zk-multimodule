@@ -1,0 +1,11 @@
+.DS_Store
+*.iml
+*.swp
+out/
+target/
+.idea
+*.log
+.project
+.settings
+.classpath
+/catalina.base_IS_UNDEFINED
