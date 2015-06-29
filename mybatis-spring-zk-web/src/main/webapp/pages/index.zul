@@ -3,7 +3,7 @@
 <zk>
 <window id="employeesPage" border="none" width="100%" height="100%" apply="org.zkoss.bind.BindComposer"
 	viewModel="@id('vm') @init('net.learntechnology.empmaint.viewmodel.EmployeesVM')">
-	<panel width="99%" border="normal" visible="@load(!vm.hideGrid)">
+	<panel width="99%" border="normal">
 		<caption label="Employees (click to edit/view)" style="text-align: left;">
 			 <button label="Create New" onClick="@command('createEmployee')" style="font-size:12px;" />
 		</caption>
@@ -13,10 +13,10 @@
 						 selectedItem="@bind(vm.employee)"
 						 width="99%" height="300px" vflex="true" hflex="true" rows="20">
  					<listhead>
-						<listheader label="First" align="left"   width="130px"/>
-						<listheader label="Last" align="left"   width="130px"/>
-						<listheader label="Age" align="left" width="130px"/>
-						<listheader label="Department" align="left"  width="160px"/>
+						<listheader label="First" align="left"   width="130px"  sort="auto(firstName)" />
+						<listheader label="Last" align="left"   width="130px"  sort="auto(lastName)" />
+						<listheader label="Age" align="left" width="130px"  sort="auto(age)" />
+						<listheader label="Department" align="left"  width="160px"  sort="auto(department.name)" />
 					</listhead>
 					<template name="model" var="item">
 						<listitem onClick="@command('editEmployee')">
@@ -30,7 +30,7 @@
 			</vlayout>
 		</panelchildren>
 	</panel>
-	<panel visible="@load(vm.hideGrid)">
+	<panel visible="@load(!vm.hideForm)">
 		<caption label="@load(vm.employee.id ne null ? 'Update Employee':'Create Employee')" style="text-align: left;"/>
 		<panelchildren>
 			<vlayout validationMessages="@id('vmsgs')" style="padding:5px;"

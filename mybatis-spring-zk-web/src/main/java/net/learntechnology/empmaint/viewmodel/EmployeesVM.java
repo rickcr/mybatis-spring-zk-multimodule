@@ -20,54 +20,54 @@ public class EmployeesVM {
 	private DepartmentService departmentService;
 
 	private Employee employee;
-	private boolean hideGrid;
+	private boolean hideForm = true;
 
-	@NotifyChange({"employee", "hideGrid"})
+	@NotifyChange({"employee", "hideForm"})
 	@Command
 	public void createEmployee() {
 		employee = new Employee();
-		hideGrid = true;
+		hideForm = false;
 	}
 
-	@NotifyChange({"hideGrid"})
+	@NotifyChange({"hideForm"})
 	@Command
 	public void editEmployee() {
-		if (employee != null) hideGrid = true;
+		if (employee != null) hideForm = false;
 	}
 
-	@NotifyChange({"employees", "hideGrid"})
+	@NotifyChange({"employees", "hideForm"})
 	@Command
 	public void add() {
 		employeeService.insert(employee);
-		hideGrid = false;
+		hideForm = true;
 	}
 
-	@NotifyChange({"employees", "hideGrid"})
+	@NotifyChange({"employees", "hideForm"})
 	@Command
 	public void update() {
 		employeeService.update(employee);
-		hideGrid = false;
+		hideForm = true;
 	}
 
-	@NotifyChange({"employees", "hideGrid"})
+	@NotifyChange({"employees", "hideForm"})
 	@Command
 	public void delete() {
 		employeeService.delete(employee.getId());
-		hideGrid = false;
+		hideForm = true;
 	}
 
-	@NotifyChange({"employees", "hideGrid"})
+	@NotifyChange({"employees", "hideForm"})
 	@Command
 	public void cancel() {
-		hideGrid = false;
+		hideForm = true;
 	}
 
 	public List<Employee> getEmployees() {
 		return employeeService.fetchAll();
 	}
 
-	public boolean isHideGrid() {
-		return hideGrid;
+	public boolean isHideForm() {
+		return hideForm;
 	}
 
 	public List<Department> getDepartments() {
