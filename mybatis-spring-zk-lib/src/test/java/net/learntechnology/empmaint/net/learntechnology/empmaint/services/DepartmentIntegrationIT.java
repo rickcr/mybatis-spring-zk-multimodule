@@ -19,7 +19,7 @@ public class DepartmentIntegrationIT extends BaseIntegrationIT {
 
 	@Test
 	public void getDepartmentsTest() {
-		List<Department> departments = departmentService.getAllDepartments();
+		List<Department> departments = departmentService.fetchAll();
 		for(Department d: departments) {
 			logger.debug("Dept: {}", d);
 		}

@@ -7,7 +7,7 @@
 			size="20"
 			readOnly="true"/>
 
-    <select id="getAllDepartments" resultType="net.learntechnology.empmaint.domain.Department">
+    <select id="fetchAll" resultType="Department">
         SELECT id, name FROM DEPARTMENT
     </select>
 </mapper>

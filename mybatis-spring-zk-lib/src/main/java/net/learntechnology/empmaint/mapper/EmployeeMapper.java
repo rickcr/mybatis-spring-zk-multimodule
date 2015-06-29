@@ -5,9 +5,9 @@ import net.learntechnology.empmaint.domain.Employee;
 import java.util.List;
 
 public interface EmployeeMapper {
-	List<Employee> getAllEmployees();
-	void updateEmployee(Employee emp);
-	void deleteEmployee(Integer id);
-	public Employee getEmployee(Integer id);
-	public void insertEmployee(Employee emp);
+	List<Employee> fetchAll();
+	void update(Employee emp);
+	void delete(Integer id);
+	public Employee fetch(Integer id);
+	public void insert(Employee emp);
 }

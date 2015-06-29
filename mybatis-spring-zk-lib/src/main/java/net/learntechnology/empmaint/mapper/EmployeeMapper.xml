@@ -12,7 +12,7 @@
 		 <result property="department.name" column="department_name"/>
 	 </resultMap>
 
-	<select id="getAllEmployees" resultMap="employeeResult">
+	<select id="fetchAll" resultMap="employeeResult">
 		SELECT
 			emp.id,
 			emp.firstname,
@@ -29,7 +29,7 @@
 	contain more columns than the one used for your display list above.
 	for this demo the queries are basically the same though. I kept them
 	separate since in real life this one would be more complete -->
-	<select id="getEmployee" resultMap="employeeResult">
+	<select id="fetch" resultMap="employeeResult">
 		SELECT
 			emp.id,
 			emp.firstname,
@@ -42,7 +42,7 @@
 		WHERE emp.id = #{id}
 	</select>
 
-	<update id="updateEmployee" parameterType="Employee">
+	<update id="update" parameterType="Employee">
         UPDATE employee
         SET
             firstname = #{firstName},
@@ -52,7 +52,7 @@
         WHERE id = #{id}
     </update>
 
-    <insert id="insertEmployee" parameterType="Employee" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert" parameterType="Employee" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO employee ( firstname, lastname, age, departmentid )
         VALUES ( #{firstName}, #{lastName}, #{age}, #{department.id} )
     </insert>
@@ -67,7 +67,7 @@
 	</insert>
     -->
 
-    <delete id="deleteEmployee" parameterType="java.lang.Integer">
+    <delete id="delete" parameterType="java.lang.Integer">
         DELETE FROM employee WHERE id = #{value}
     </delete>
 

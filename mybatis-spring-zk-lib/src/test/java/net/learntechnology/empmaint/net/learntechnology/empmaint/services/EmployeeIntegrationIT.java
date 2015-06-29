@@ -21,7 +21,7 @@ public class EmployeeIntegrationIT extends BaseIntegrationIT {
 
 	@Test
 	public void getAllEmployeesTest() {
-		List<Employee> employees = employeeService.getAllEmployees();
+		List<Employee> employees = employeeService.fetchAll();
 		for(Employee emp: employees) {
 			logger.debug("EMP: {}", emp);
 		}
@@ -30,7 +30,7 @@ public class EmployeeIntegrationIT extends BaseIntegrationIT {
 
 	@Test
 	public void getEmployeeTest() {
-		Employee emp = employeeService.getEmployee(1);
+		Employee emp = employeeService.fetch(1);
 		logger.debug("Emp returned {}", emp);
 		Assert.assertEquals("John", emp.getFirstName());
 	}
@@ -41,8 +41,8 @@ public class EmployeeIntegrationIT extends BaseIntegrationIT {
 		Department d = new Department();
 		d.setId(100);
 		Employee emp = new Employee(null, "TestFirstName", "TestLastName", 43, d);
-		employeeService.insertEmployee(emp);
-		emp = employeeService.getEmployee(emp.getId());
+		employeeService.insert(emp);
+		emp = employeeService.fetch(emp.getId());
 		logger.debug("Emp returned {}", emp);
 		Assert.assertEquals("TestFirstName", emp.getFirstName());
 	}
