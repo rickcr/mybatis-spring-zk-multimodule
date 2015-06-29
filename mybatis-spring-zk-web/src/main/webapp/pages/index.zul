@@ -34,7 +34,7 @@
 		<caption label="@load(vm.employee.id ne null ? 'Update Employee':'Create Employee')" style="text-align: left;"/>
 		<panelchildren>
 			<vlayout validationMessages="@id('vmsgs')" style="padding:5px;"
-					 form="@id('employee')
+					 form="@id('emp')
 					@load(vm.employee)
 					@save(vm.employee, before='update'),
 					@save(vm.employee, before='add')">
@@ -47,24 +47,24 @@
 							<rows>
 								<row visible="@load(vm.employee.id ne null)">
 									<cell sclass="row-title">ID:</cell>
-									<cell><textbox disabled="true" value="@bind(employee.id)" style="width:40px"/></cell>
+									<cell><textbox disabled="true" value="@bind(emp.id)" style="width:40px"/></cell>
 								</row>
 								<row>
 									<cell sclass="row-title">First Name:</cell>
-									<cell><textbox value="@bind(employee.firstName)" constraint="no empty" style="width:400px"/></cell>
+									<cell><textbox value="@bind(emp.firstName)" constraint="no empty" style="width:400px"/></cell>
 								</row>
 								<row>
 									<cell sclass="row-title">Last Name:</cell>
-									<cell><textbox value="@bind(employee.lastName)" constraint="no empty" style="width:400px"/></cell>
+									<cell><textbox value="@bind(emp.lastName)" constraint="no empty" style="width:400px"/></cell>
 								</row>
 								<row>
 									<cell sclass="row-title">Age:</cell>
-									<cell><textbox value="@bind(employee.age)"  style="width:400px"/></cell>
+									<cell><textbox value="@bind(emp.age)" constraint="no empty" style="width:400px"/></cell>
 								</row>
 								<row>
 									<cell sclass="row-title">Department:</cell>
 									<cell>
-										 <listbox model="@load(vm.departments)" selectedItem="@bind(employee.department)"
+										 <listbox model="@load(vm.departments)" selectedItem="@bind(emp.department)"
 												 width="200px" mold="select" rows="1"
 												 id="departmentsList">
 												<template name="model" var="item">

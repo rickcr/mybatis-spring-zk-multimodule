@@ -26,6 +26,7 @@ public class EmployeesVM {
 	@Command
 	public void createEmployee() {
 		employee = new Employee();
+		employee.setDepartment(getDepartments().get(0));
 		hideForm = false;
 	}
 
