@@ -4,6 +4,8 @@ import net.learntechnology.empmaint.domain.Department;
 import net.learntechnology.empmaint.domain.Employee;
 import net.learntechnology.empmaint.services.DepartmentService;
 import net.learntechnology.empmaint.services.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class EmployeesVM {
+	private final static Logger logger = LoggerFactory.getLogger(EmployeesVM.class);
 
 	@WireVariable
 	private EmployeeService employeeService;
