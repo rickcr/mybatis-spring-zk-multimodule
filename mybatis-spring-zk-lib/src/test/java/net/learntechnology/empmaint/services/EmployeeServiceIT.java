@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-public class EmployeeIntegrationIT extends BaseIntegrationIT {
-	private final static Logger logger = LoggerFactory.getLogger(EmployeeIntegrationIT.class);
+public class EmployeeServiceIT extends BaseIT {
+	private final static Logger logger = LoggerFactory.getLogger(EmployeeServiceIT.class);
 
 	@Resource
 	private EmployeeService employeeService;

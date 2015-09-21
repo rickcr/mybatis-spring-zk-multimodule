@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.Resource;
 import java.util.List;
 
-public class DepartmentIntegrationIT extends BaseIntegrationIT {
-	private final static Logger logger = LoggerFactory.getLogger(DepartmentIntegrationIT.class);
+public class DepartmentServiceIT extends BaseIT {
+	private final static Logger logger = LoggerFactory.getLogger(DepartmentServiceIT.class);
 
 	@Resource
 	private DepartmentService departmentService;
