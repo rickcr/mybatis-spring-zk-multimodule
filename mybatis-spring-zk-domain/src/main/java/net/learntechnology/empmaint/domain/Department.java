@@ -2,7 +2,7 @@ package net.learntechnology.empmaint.domain;
 
 
 public class Department extends BaseVO {
-	private static final long serialVersionUID = -6810736897253521583L;
+
 	private int id;
 	private String name;
 
@@ -31,12 +31,16 @@ public class Department extends BaseVO {
 
 		Department that = (Department) o;
 
-		return id == that.id;
+		if (id != that.id)
+			return false;
+		return !(name != null ? !name.equals(that.name) : that.name != null);
 
 	}
 
 	@Override
 	public int hashCode() {
-		return id;
+		int result = id;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		return result;
 	}
 }
