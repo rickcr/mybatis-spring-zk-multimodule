@@ -210,6 +210,18 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- see http://www.mkyong.com/maven/how-to-deploy-maven-based-war-file-to-tomcat for example
+			of making sure you're settings.xml has proper server def and what you need to modify in conf/tomcat-users.xml -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<server>LocalTomcatServer</server>
+					<path>/${project.artifactId}</path>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
