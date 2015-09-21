@@ -1,9 +1,7 @@
-package net.learntechnology.empmaint.net.learntechnology.empmaint.services;
+package net.learntechnology.empmaint.services;
 
-import net.learntechnology.empmaint.BaseIntegrationIT;
 import net.learntechnology.empmaint.domain.Department;
 import net.learntechnology.empmaint.domain.Employee;
-import net.learntechnology.empmaint.services.EmployeeService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -20,7 +18,7 @@ public class EmployeeIntegrationIT extends BaseIntegrationIT {
 	private EmployeeService employeeService;
 
 	@Test
-	public void getAllEmployeesTest() {
+	public void should_fetch_all_employees() {
 		List<Employee> employees = employeeService.fetchAll();
 		for(Employee emp: employees) {
 			logger.debug("EMP: {}", emp);
@@ -29,7 +27,7 @@ public class EmployeeIntegrationIT extends BaseIntegrationIT {
 	}
 
 	@Test
-	public void getEmployeeTest() {
+	public void should_fetch_employee() {
 		Employee emp = employeeService.fetch(1);
 		logger.debug("Emp returned {}", emp);
 		Assert.assertEquals("John", emp.getFirstName());
@@ -37,7 +35,7 @@ public class EmployeeIntegrationIT extends BaseIntegrationIT {
 
 	@Test
 	@Transactional
-	public void insertEmployeeTest() {
+	public void should_insert_employee() {
 		Department d = new Department();
 		d.setId(100);
 		Employee emp = new Employee(null, "TestFirstName", "TestLastName", 43, d);

@@ -1,8 +1,6 @@
-package net.learntechnology.empmaint.net.learntechnology.empmaint.services;
+package net.learntechnology.empmaint.services;
 
-import net.learntechnology.empmaint.BaseIntegrationIT;
 import net.learntechnology.empmaint.domain.Department;
-import net.learntechnology.empmaint.services.DepartmentService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -18,7 +16,7 @@ public class DepartmentIntegrationIT extends BaseIntegrationIT {
 	private DepartmentService departmentService;
 
 	@Test
-	public void getDepartmentsTest() {
+	public void should_fetch_all_departments() {
 		List<Department> departments = departmentService.fetchAll();
 		for(Department d: departments) {
 			logger.debug("Dept: {}", d);

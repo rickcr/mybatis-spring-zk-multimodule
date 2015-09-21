@@ -1,4 +1,4 @@
-package net.learntechnology.empmaint;
+package net.learntechnology.empmaint.services;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
