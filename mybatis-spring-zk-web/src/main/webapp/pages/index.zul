@@ -1,9 +1,9 @@
 <?page title="Employee Maintenance" ?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
-<window id="employeesPage" border="none" width="100%" height="100%" apply="org.zkoss.bind.BindComposer"
+<window id="employeesPage" border="none" width="100%" apply="org.zkoss.bind.BindComposer"
 	viewModel="@id('vm') @init('net.learntechnology.empmaint.viewmodel.EmployeesVM')">
-	<panel width="99%" border="normal">
+	<panel width="99%" border="normal"  height="350px">
 		<caption label="Employees (click to edit/view)" style="text-align: left;">
 			 <button label="Create New" onClick="@command('createEmployee')" style="font-size:12px;" />
 		</caption>
@@ -11,7 +11,7 @@
 			<vlayout style="margin:10px;">
 				<listbox id="employeesList" model="@load(vm.employees)"
 						 selectedItem="@bind(vm.employee)"
-						 width="99%" height="300px" hflex="min" rows="20">
+						 width="99%" rows="8">
  					<listhead>
 						<listheader label="First" align="left"   width="130px"  sort="auto(firstName)" />
 						<listheader label="Last" align="left"   width="130px"  sort="auto(lastName)" />
@@ -30,7 +30,7 @@
 			</vlayout>
 		</panelchildren>
 	</panel>
-	<panel visible="@load(!vm.hideForm)">
+	<panel visible="@load(!vm.hideForm)" height="300px" style="padding-top:10px;">
 		<caption label="@load(vm.employee.id ne null ? 'Update Employee':'Create Employee')" style="text-align: left;"/>
 		<panelchildren>
 			<vlayout validationMessages="@id('vmsgs')" style="padding:5px;"
