@@ -33,7 +33,7 @@
 	<panel visible="@load(!vm.hideForm)" height="300px" style="padding-top:10px;">
 		<caption label="@load(vm.employee.id ne null ? 'Update Employee':'Create Employee')" style="text-align: left;"/>
 		<panelchildren>
-			<vlayout validationMessages="@id('vmsgs')" style="padding:5px;"
+			<vlayout style="padding:5px;"
 					 form="@id('emp')
 					@load(vm.employee)
 					@save(vm.employee, before='update'),
