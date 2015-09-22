@@ -107,6 +107,10 @@ Example not using a ResultMap needed:
 	<select id="getAllDepartments" resultType="net.learntechnology.empmaint.domain.Department">
 		SELECT id, name FROM DEPARTMENT
 	</select>
+	
+You will also notice that, I illustrate both using a pure annotation approach to the Mappers (no xml for the SQL) and the xml approach. The DemographicMapper 
+illustrates how you could create your simple sql directly as annotation. The XML approach however gives you some more powerful options that you can't always
+do via the annotation based SQL, so I typically go wtih just using XML mappers for everything in my 'real life' code.
 
 To use our mapper we just declare it as a resource. SIMPLE!:
  
