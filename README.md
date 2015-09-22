@@ -16,7 +16,9 @@ Navigate to the parent's subproject directory: mybatis-spring-zk-web directory a
 Then use URL: http://localhost:8080
 
 **To deploy:**<br/>
-Move the generated mybatis-spring-zk-web.war file from mybatis-spring-zk-web/target/ to your app server's deploy dir (eg tomcat/webapps) and start your server.
+If using Tomcat7: make sure Tomcat is running and then from mybatis-spring-zk-web directory type: mvn tomcat7:deploy
+or you can manually move the generated mybatis-spring-zk-web.war file from mybatis-spring-zk-web/target/ 
+to your app server's deploy dir (eg tomcat/webapps) and start your server (if not started already.)
 Then use URL: http://localhost:8080/mybatis-spring-zk-web
  
 NOTES:
@@ -102,7 +104,7 @@ EmployeMapper.xml
  
 Note you don't always have to use a ResultMap when your columns match up to your properties:
 
-Example not using a ResultMap needed:
+Example illustrating mapping directly to an Object (not using a ResultMap):
 
 	<select id="getAllDepartments" resultType="net.learntechnology.empmaint.domain.Department">
 		SELECT id, name FROM DEPARTMENT
