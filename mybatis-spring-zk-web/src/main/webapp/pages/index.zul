@@ -1,5 +1,4 @@
 <?page title="Employee Maintenance" ?>
-<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
 <window id="employeesPage" border="none" width="100%" apply="org.zkoss.bind.BindComposer"
 	viewModel="@id('vm') @init('net.learntechnology.empmaint.viewmodel.EmployeesVM')">
