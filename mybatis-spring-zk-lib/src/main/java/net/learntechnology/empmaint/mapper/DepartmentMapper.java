@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 
-@CacheNamespace(flushInterval = 86400000, size = 20, readWrite = false )
+@CacheNamespace(readWrite = false )
 public interface DepartmentMapper {
 
 	@Select("SELECT id, name FROM DEPARTMENT")
