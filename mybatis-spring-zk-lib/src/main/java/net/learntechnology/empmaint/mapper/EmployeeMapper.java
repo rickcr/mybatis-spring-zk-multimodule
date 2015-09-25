@@ -8,6 +8,6 @@ public interface EmployeeMapper {
 	List<Employee> fetchAll();
 	void update(Employee emp);
 	void delete(Integer id);
-	public Employee fetch(Integer id);
-	public void insert(Employee emp);
+	Employee fetch(Integer id);
+	void insert(Employee emp);
 }
